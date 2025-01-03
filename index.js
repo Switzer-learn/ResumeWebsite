@@ -2,7 +2,8 @@ $(document).ready(function() {
     var randomNumber = Math.floor(Math.random() * 2 + 1);
     if (randomNumber % 2 === 0) {
         $('#myPic').attr('src', "./assets/image/2.png");
-        $('#hero').addClass('flex-row-reverse');
+        $('#hero').removeClass('md:flex-row');
+        $('#hero').addClass('md:flex-row-reverse');
     }
 });
 
