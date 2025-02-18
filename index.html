@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title class="inter-500">Willy Candra - Web Developer</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextWriter.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script src="script.js" defer></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <title>Willy Candra - Web Developer</title>
+  <meta name="description" content="Willy Candra - Full-Stack Web Developer specializing in the PERN stack, creative problem solving, and innovative web development projects.">
+  <meta name="keywords" content="Web Developer, Full-Stack, PERN, React, Node, JavaScript, HTML, CSS, Portfolio">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://yourdomain.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  </head>
-
+  <!-- Preload critical image -->
+  <link rel="preload" as="image" href="./assets/image/Hero.jpg">
+  
+  <!-- Scripts with defer for non-critical JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js" defer></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" defer></script>
+  <script src="index.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
 <body class="text-gray-800 z-10 static montserrat-300">
+  <!-- Header Menu -->
   <div class="fixed top-0 left-1/2 transform -translate-x-1/2 mt-5 w-auto z-50 px-10 py-3 gap-2 bg-gradient-to-r from-[#2563EB] to-[#0ea5e9] rounded-full hover:scale-105" id="headerMenu">
     <div class="flex gap-4 montserrat-500 z-50">
       <a href="#hero" class="text-white hover:text-gray-200 hover:scale-105">Home</a>
@@ -26,207 +31,193 @@
       <a href="#skills" class="text-white hover:text-gray-200 hover:scale-105">Skills</a>
       <a href="#projects" class="text-white hover:text-gray-200 hover:scale-105">Projects</a>
     </div>
-  </div>  
-
   </div>
+
   <!-- Header -->
-  <header class="bg-gradient-to-r from-[#2563EB] to-[#0ea5e9] h-screen text-white py-10 bg-cover bg-center"  style="background-image: url('./assets/image/Hero.jpg');">
+  <header class="bg-gradient-to-r from-[#2563EB] to-[#0ea5e9] h-screen text-white py-10 bg-cover bg-center" style="background-image: url('./assets/image/Hero.jpg');">
     <div class="container md:mx-12 text-center md:text-start flex flex-col-reverse md:flex-row my-auto md:mt-24" id="hero">
-        <div class="m-auto px-10 w-screen md:w-1/2" id="introduction">
-          <p class="">Full-Stack Web Developer | Creative Problem Solver | PERN Stack Developer</p>
-          <h1 class="text-4xl font-bold mb-4" id="myName">Loading . . .</h1>
-          <p class="text-wrap montserrat-300 text-truncate text-center text-xl md:text-3xl font-semibold md:text-start" id="shortIntro"></p>
-          <div class="md:flex text-lg md:text-2xl">
-            <p class="font-semibold mx-auto md:mx-0 md:me-2" id="subShortIntro">
-              <div class="rounded-md bg-gray-800 opacity-0" id="tectMentionDiv">
-                <p class="opacity-100" id="techMention"></p>
-              </div>
-            </p>
-          </div>
-          <p class="text-2xl font-semibold" id="ctaText"></p>
-            <div class="flex gap-2 mt-3 justify-center md:justify-start">
-              <a href="#projects" class="hover:scale-105 px-3 py-2 rounded-full shadow-md text-white montserrat-500 bg-gradient-to-r from-[#3B82F6] to-[#10B981] hover:bg-gradient-to-r hover:from-[#10B981] hover:to-[#3B82F6] transition">View My Work</a>
-              <a class="px-3 py-2 rounded-full border montserrat-500 shadow-md hover:scale-105" href="./assets/resume/Willy's CV Resume.pdf" download="Willy's_Resume" >Download Resume</a>
+      <div class="m-auto px-10 w-screen md:w-1/2" id="introduction">
+        <p>Full-Stack Web Developer | Creative Problem Solver | PERN Stack Developer</p>
+        <h1 class="text-4xl font-bold mb-4" id="myName">Loading . . .</h1>
+        <p class="text-wrap montserrat-300 text-truncate text-center text-xl md:text-3xl font-semibold md:text-start" id="shortIntro"></p>
+        <div class="md:flex text-lg md:text-2xl">
+          <p class="font-semibold mx-auto md:mx-0 md:me-2" id="subShortIntro">
+            <div class="rounded-md bg-gray-800 opacity-0" id="tectMentionDiv">
+              <p class="opacity-100" id="techMention"></p>
             </div>
+          </p>
         </div>
-        <div class="flex mx-auto my-auto justify-center w-screen md:w-96 overflow-hidden rounded-full md:border-2">
-            <img src="./assets/image/1.png" alt="picture of myself" id="myPic" class="h-auto w-auto max-h-60 md:max-h-96 max-w-96 object-cover" />
+        <p class="text-2xl font-semibold" id="ctaText"></p>
+        <div class="flex gap-2 mt-3 justify-center md:justify-start">
+          <a href="#projects" class="hover:scale-105 px-3 py-2 rounded-full shadow-md text-white montserrat-500 bg-gradient-to-r from-[#3B82F6] to-[#10B981] hover:bg-gradient-to-r hover:from-[#10B981] hover:to-[#3B82F6] transition">View My Work</a>
+          <a class="px-3 py-2 rounded-full border montserrat-500 shadow-md hover:scale-105" href="./assets/resume/Willy's CV Resume.pdf" download="Willy's_Resume">Download Resume</a>
         </div>
+      </div>
+      <div class="flex mx-auto my-auto justify-center w-screen md:w-96 overflow-hidden rounded-full md:border-2">
+        <img src="./assets/image/1.png" alt="Picture of myself" id="myPic" class="h-auto w-auto max-h-60 md:max-h-96 max-w-96 object-cover">
+      </div>
     </div>
   </header>
 
   <!-- About Section -->
-  <section id="about" class="py-16 bg-gradient-to-b from-[#852966] via-[#00426e] to-[#852966] ">
-  <div class="container mx-auto px-4 text-white">
-    <!-- Section Title -->
-    <h2 class="text-3xl font-bold text-center mb-8underline Inter-500">About Me</h2>
-    
-    <!-- Intro Paragraph -->
-    <p class="text-center max-w-3xl mx-auto leading-7 mb-6">
-      I’m an enthusiastic web developer passionate about building interactive and user-friendly web applications. 
-      My journey began with a curiosity for technology and a drive to solve real-world problems through code.
-    </p>
-
-    <!-- Highlight Section -->
-    <div class="bg-white shadow-lg rounded-lg p-6 mb-8 max-w-4xl mx-auto">
-      <h3 class="text-2xl font-semibold mb-4 text-center text-gray-800">What Drives Me?</h3>
-      <p class="text-gray-700 leading-7">
-        Web development is my passion and career path, blending creativity, problem-solving, and continuous learning. I take pride in writing clean, efficient code that delivers value in a highly rewarding field. The flexibility of remote work excites me, allowing me to contribute to impactful projects on a global scale while growing both personally and professionally.
+  <section id="about" class="py-16 bg-gradient-to-b from-[#852966] via-[#00426e] to-[#852966]">
+    <div class="container mx-auto px-4 text-white">
+      <h2 class="text-3xl font-bold text-center mb-8 underline Inter-500">About Me</h2>
+      <p class="text-center max-w-3xl mx-auto leading-7 mb-6">
+        I’m an enthusiastic web developer passionate about building interactive and user-friendly web applications.
+        My journey began with a curiosity for technology and a drive to solve real-world problems through code.
       </p>
+      <div class="bg-white shadow-lg rounded-lg p-6 mb-8 max-w-4xl mx-auto">
+        <h3 class="text-2xl font-semibold mb-4 text-center text-gray-800">What Drives Me?</h3>
+        <p class="text-gray-700 leading-7">
+          Web development is my passion and career path, blending creativity, problem-solving, and continuous learning. I take pride in writing clean, efficient code that delivers value in a highly rewarding field. The flexibility of remote work excites me, allowing me to contribute to impactful projects on a global scale while growing both personally and professionally.
+        </p>
+      </div>
+      <div class="timeline max-w-4xl mx-auto">
+        <div class="flex items-start mb-6">
+          <div class="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0 mt-2"></div>
+          <div class="ml-4">
+            <h4 class="font-semibold">2024 October</h4>
+            <p class="leading-7">Started my journey in web development, exploring HTML, CSS, and JavaScript.</p>
+          </div>
+        </div>
+        <div class="flex items-start mb-6">
+          <div class="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0 mt-2"></div>
+          <div class="ml-4">
+            <h4 class="font-semibold">2024</h4>
+            <p class="leading-7">Built my first project: a Point-of-Sale system for restaurants, which included dynamic front-end and back-end features.</p>
+          </div>
+        </div>
+        <div class="flex items-start mb-6">
+          <div class="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0 mt-2"></div>
+          <div class="ml-4">
+            <h4 class="font-semibold">2024</h4>
+            <p class="leading-7">Continued developing skills in React, Node.js, and database management to enhance my expertise in building scalable applications.</p>
+          </div>
+        </div>
+        <div class="flex items-start">
+          <div class="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0 mt-2"></div>
+          <div class="ml-4">
+            <h4 class="font-semibold">2025</h4>
+            <p class="leading-7">
+              Building my first real-world project for a spa company in Indonesia 
+              <a href="https://sakuraspabwi.com" class="text-blue-500 font-semibold" target="_blank" rel="noopener noreferrer">Sakura Spa</a> 
+              with React Typescript, Tailwind CSS, and Supabase.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <!-- Timeline Section -->
-    <div class="timeline max-w-4xl mx-auto">
-      <div class="flex items-start mb-6">
-        <div class="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0 mt-2"></div>
-        <div class="ml-4">
-          <h4 class="font-semibold">2024 October</h4>
-          <p class="leading-7">Started my journey in web development, exploring HTML, CSS, and JavaScript.</p>
-        </div>
-      </div>
-      <div class="flex items-start mb-6">
-        <div class="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0 mt-2"></div>
-        <div class="ml-4">
-          <h4 class="font-semibold">2024</h4>
-          <p class="leading-7">Built my first project: a Point-of-Sale system for restaurants, which included dynamic front-end and back-end features.</p>
-        </div>
-      </div>
-      <div class="flex items-start mb-6">
-        <div class="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0 mt-2"></div>
-        <div class="ml-4">
-          <h4 class="font-semibold">2024</h4>
-          <p class="leading-7">Continued developing skills in React, Node.js, and database management to enhance my expertise in building scalable applications.</p>
-        </div>
-      </div>
-      <div class="flex items-start">
-        <div class="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0 mt-2"></div>
-        <div class="ml-4">
-          <h4 class="font-semibold">2025</h4>
-          <p class="leading-7">Building my first real-world project for a spa company in Indonesia <a href="https://sakuraspabwi.com" class="text-blue-500 font-semibold">Sakura Spa</a> with React Typescript, Tailwind CSS, and Supabase.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Skills Section -->
   <section id="skills" class="bg-gradient-to-b from-[#852966] via-[#00426e] to-[#852966] py-16 static z-0">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-8 text-white underline Inter-500">Skills</h2>
       <div class="flex flex-col md:flex-row justify-center gap-6 mb-4">
-        <div class="flex flex-col w-2/5 justify-center gap-4 mx-auto md:mx-0 ">
-         <button class="text-xl font-bold text-center underline text-white inter-500 hover:scale-105" id="frontEndButton">Front End</button>
-         <div class="hidden flex flex-col justify-center gap-4" id="frontEndSkills">
-          <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
-            <p class="text-lg font-semibold">HTML</p>
+        <div class="flex flex-col w-2/5 justify-center gap-4 mx-auto md:mx-0">
+          <button class="text-xl font-bold text-center underline text-white inter-500 hover:scale-105" id="frontEndButton">Front End</button>
+          <div class="hidden flex flex-col justify-center gap-4" id="frontEndSkills">
+            <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
+              <p class="text-lg font-semibold">HTML</p>
+            </div>
+            <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
+              <p class="text-lg font-semibold">CSS</p>
+            </div>
+            <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
+              <p class="text-lg font-semibold">JavaScript</p>
+            </div>
+            <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
+              <p class="text-lg font-semibold">Typescript</p>
+            </div>
+            <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
+              <p class="text-lg font-semibold">React Js</p>
+            </div>
+            <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
+              <p class="text-lg font-semibold">Bootstrap Framework</p>
+            </div>
+            <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
+              <p class="text-lg font-semibold">Tailwind CSS Framework</p>
+            </div>
           </div>
-          <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
-            <p class="text-lg font-semibold">CSS</p>
-          </div>
-          <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
-            <p class="text-lg font-semibold">JavaScript</p>
-          </div>
-          <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
-            <p class="text-lg font-semibold">Typescript</p>
-          </div>
-          <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
-            <p class="text-lg font-semibold">React Js</p>
-          </div>
-          <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
-            <p class="text-lg font-semibold">Bootstrap Framework</p>
-          </div>
-          <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
-            <p class="text-lg font-semibold">Tailwind CSS Framework</p>
-          </div>
-         </div>
         </div>
-        
         <div class="flex flex-col w-2/5 gap-6 mx-auto md:mx-0">
-        <button class="text-xl font-bold text-center text-white inter-500 underline hover:scale-105" id="BackEndButton">Back End</button>
-        <div class="flex flex-col justify-center gap-4 hidden" id="BackEndSkills">
-         <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
-          <p class="text-lg font-semibold">PostgreSQL</p>
-         </div>
-         <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
-          <p class="text-lg font-semibold">Node Js</p>
-         </div>
-         <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
-          <p class="text-lg font-semibold">Express Js</p>
-         </div>
-         <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
-          <p class="text-lg font-semibold">Embedded Js</p>
-         </div>
+          <button class="text-xl font-bold text-center text-white inter-500 underline hover:scale-105" id="BackEndButton">Back End</button>
+          <div class="flex flex-col justify-center gap-4 hidden" id="BackEndSkills">
+            <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
+              <p class="text-lg font-semibold">PostgreSQL</p>
+            </div>
+            <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
+              <p class="text-lg font-semibold">Node Js</p>
+            </div>
+            <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
+              <p class="text-lg font-semibold">Express Js</p>
+            </div>
+            <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
+              <p class="text-lg font-semibold">Embedded Js</p>
+            </div>
+          </div>
         </div>
       </div>
-      </div>
-      
     </div>
   </section>
 
   <!-- Projects Section -->
   <section id="projects" class="py-16 bg-gradient-to-b from-[#852966] via-[#00426e] to-[#852966]">
-    <div class="container mx-auto px-4 ">
+    <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-8 underline Inter-500 text-white">Projects</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="bg-white flex flex-col rounded-md shadow-md p-4 hover:shadow-lg transition">
           <h3 class="text-xl font-semibold mb-2">Simple POS System</h3>
-          <img src="./assets/image/FnBPOS.jpeg" alt="FnB POS Website image"  class="object-top w-96 h-72 object-cover hover:object-scale-down hover:w-auto hover:h-auto" />
+          <img src="./assets/image/FnBPOS.jpeg" alt="FnB POS Website image" class="object-top w-96 h-72 object-cover hover:object-scale-down hover:w-auto hover:h-auto" loading="lazy">
           <button class="rounded-md px-3 py-2 bg-blue-500 hover:bg-blue-600 my-3 text-white font-semibold" id="posLink">Check it out</button>
           <div class="text-sm text-gray-600">
-            <p class="font-bold" >
-              Description:
-          </p>
-          <p>
-            This web-based Point of Sale (POS) system is designed for restaurant operations. 
-            It facilitates all from customer ordering till payment handle, kitchen display and admin dashboard. 
-            Build using React Js, Node Js, Express Js, PostgreSQL, Axios, Tailwind CSS, RESTful API.
-          </p>
-        </div>
+            <p class="font-bold">Description:</p>
+            <p>
+              This web-based Point of Sale (POS) system is designed for restaurant operations.
+              It facilitates all from customer ordering to payment handling, kitchen display, and admin dashboard.
+              Built using React Js, Node Js, Express Js, PostgreSQL, Axios, Tailwind CSS, and a RESTful API.
+            </p>
+          </div>
         </div>
         <div class="flex flex-col bg-white rounded-md shadow-md p-4 hover:shadow-lg transition">
           <h3 class="text-xl font-semibold mb-2">Book Note Project</h3>
-          <img src="./assets/image/BooknoteApp.jpeg" alt="Book Note Website image" class="object-top w-96 h-72 object-cover hover:object-scale-down hover:w-auto hover:h-auto" />
+          <img src="./assets/image/BooknoteApp.jpeg" alt="Book Note Website image" class="object-top w-96 h-72 object-cover hover:object-scale-down hover:w-auto hover:h-auto" loading="lazy">
           <button class="rounded-md px-3 py-2 bg-blue-500 hover:bg-blue-600 my-3 text-white font-semibold" id="bookLink">Check it out</button>
           <div class="text-sm text-gray-600">
-            <p class="font-bold" >
-              Description:
-          </p>
+            <p class="font-bold">Description:</p>
             <p>
-            Keeping track of Books that have been read before, write notes, personal summary and book covers. 
-            Created when I practice SQL using postgres the updated using supabase. 
-            Created using Node js, embedded Js, express js, Bootstrap and PostgreSQL
-          </p>
+              An app to track books you’ve read, write notes, summaries, and manage book covers.
+              Initially created while practicing SQL with PostgreSQL and later updated using Supabase.
+              Built with Node Js, Embedded Js, Express Js, Bootstrap, and PostgreSQL.
+            </p>
           </div>
         </div>
         <div class="bg-white flex flex-col rounded-md shadow-md p-4 hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold mb-2">E-commerce page Prototype</h3>
-          <img src="./assets/image/EcommerceApp.jpeg" alt="E-commerce Website image" class="object-top w-96 h-72 object-cover hover:object-scale-down hover:w-auto hover:h-auto" />
+          <h3 class="text-xl font-semibold mb-2">E-commerce Page Prototype</h3>
+          <img src="./assets/image/EcommerceApp.jpeg" alt="E-commerce Website image" class="object-top w-96 h-72 object-cover hover:object-scale-down hover:w-auto hover:h-auto" loading="lazy">
           <button class="rounded-md px-3 py-2 bg-blue-500 hover:bg-blue-600 my-3 text-white font-semibold" id="ecommerceLink">Check it out</button>
           <div class="text-sm text-gray-600">
-            <p class="font-bold" >
-              Description:
-            </p>
+            <p class="font-bold">Description:</p>
             <p>
-            Created as a showcase for showing design of a simple e-commerce site that still can be improved as wanted.
-            Demonstrated to use API from fakestoreapi.com in developing.
-            Embedded Js, Node Js, Express Js, Axios, and Bootstrap is used in creating this site.
+              A showcase design for a simple e-commerce site that can be further enhanced.
+              Demonstrates the use of the fakestoreapi.com API.
+              Built with Embedded Js, Node Js, Express Js, Axios, and Bootstrap.
             </p>
           </div>
         </div>
         <div class="bg-white flex flex-col rounded-md shadow-md p-4 hover:shadow-lg transition">
           <h3 class="text-xl font-semibold mb-2">Sakura Spa Bwi</h3>
-          <img src="./assets/image/sakuraspa.jpeg" alt="sakuraspa" class="w-96 h-72 object-cover object-top hover:object-scale-down hover:w-auto hover:h-auto" />
+          <img src="./assets/image/sakuraspa.jpeg" alt="Sakura Spa" class="w-96 h-72 object-cover object-top hover:object-scale-down hover:w-auto hover:h-auto" loading="lazy">
           <button class="rounded-md px-3 py-2 bg-blue-500 hover:bg-blue-600 my-3 text-white font-semibold" id="sakuraspa">Check it out</button>
           <div class="text-sm text-gray-600">
-            <p class="font-bold" >
-              Description:
+            <p class="font-bold">Description:</p>
+            <p>
+              An integrated project featuring a Landing Page, POS System, and Admin Dashboard for a spa company.
+              The POS system handles transactions, payments, and revenue tracking while the admin dashboard manages inventory, employee management, and scheduling.
             </p>
             <p>
-              This project integrates a Landing Page, POS System, and Admin Dashboard to streamline business operations. The POS System manages transactions, payments, and revenue tracking, while the Admin Dashboard handles inventory, employee management, and scheduling.
-            </p>
-            <p>
-                Built with React and TypeScript, it offers a modern, responsive UI, enhanced by Tailwind CSS. Supabase powers authentication and database management, ensuring scalability and security. Node.js supports backend integrations and dependency management. This solution optimizes workflows, improves efficiency, and enhances the user experience.
+              Built with React and TypeScript for a modern, responsive UI enhanced by Tailwind CSS. Supabase powers authentication and database management, while Node.js supports backend integrations.
             </p>
           </div>
         </div>
@@ -239,36 +230,36 @@
       <div class="flex flex-col opacity-80 text-center justify-center gap-2 py-4 hidden bg-white rounded-full" id="contactMeChoice">
         <div class="flex justify-center">
           <a href="https://wa.me/+62895351011860" id="whatsapp">
-            <img src="./assets/image/icons8-whatsapp.gif" alt="whatsapp" width="50px" height="50px">
+            <img src="./assets/image/icons8-whatsapp.gif" alt="WhatsApp" width="50" height="50" loading="lazy">
           </a>
         </div>
         <div class="flex justify-center">
           <a href="https://www.instagram.com/willycandra50" id="instagram">
-            <img src="./assets/image/icons8-instagram.gif" alt="instagram" width="50px" height="50px">
+            <img src="./assets/image/icons8-instagram.gif" alt="Instagram" width="50" height="50" loading="lazy">
           </a>
         </div>
         <div class="flex justify-center">
           <a href="https://github.com/Switzer-learn" id="github">
-            <img src="./assets/image/icons8-github.gif" alt="github" width="50px" height="50px">
+            <img src="./assets/image/icons8-github.gif" alt="GitHub" width="50" height="50" loading="lazy">
           </a>
         </div>
         <div class="flex justify-center">
           <a href="https://web.facebook.com/willy.candra2" id="facebook">
-            <img src="./assets/image/icons8-facebook.gif" alt="facebook" width="50px" height="50px">
+            <img src="./assets/image/icons8-facebook.gif" alt="Facebook" width="50" height="50" loading="lazy">
           </a>
         </div>
         <div class="flex justify-center">
           <a href="https://www.linkedin.com/in/willy-candra-7096a9336" id="linkedIn">
-            <img src="./assets/image/icons8-linkedin.gif" alt="linkedin" width="50px" height="50px">
+            <img src="./assets/image/icons8-linkedin.gif" alt="LinkedIn" width="50" height="50" loading="lazy">
           </a>
         </div>
       </div>
-      <div class="py-2 px-3 rounded-lg border-2 shadow-lg bg-[#0d1821ff]" id="contactMe" >
+      <div class="py-2 px-3 rounded-lg border-2 shadow-lg bg-[#0d1821ff]" id="contactMe">
         <button class="text-white">Contact Me</button>
       </div>
     </div>
   </section>
-
+  <hr/>
   <!-- Contact Section -->
   <footer id="contact" class="bg-gray-800 text-white py-16 bg-gradient-to-b from-[#852966] to-[#00426e]">
     <div class="container mx-auto px-4 text-center">
@@ -278,24 +269,25 @@
         <a href="mailto:wcandra.webdev@gmail.com" class="bg-blue-500 px-6 py-3 rounded-md shadow-md hover:bg-blue-600 transition">Email Me</a>
       </div>
     </div>
-    <div id="mentions" class="font-family: 'Poppins', sans-serif; text-center text-white py-4 text-sm">
+    <div id="mentions" class="text-center text-white py-4 text-sm">
       <p>© <span id="thisYear"></span> Willy Candra. All rights reserved.</p>
       <p>
-        <a target="_blank" href="https://icons8.com/icon/ZRiAFreol5mE/instagram">Instagram</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+        <a target="_blank" rel="noopener noreferrer" href="https://icons8.com/icon/ZRiAFreol5mE/instagram">Instagram</a> icon by <a target="_blank" rel="noopener noreferrer" href="https://icons8.com">Icons8</a>
       </p>
       <p>
-        <a target="_blank" href="https://icons8.com/icon/CtrV2SV33rD9/facebook-circled">Facebook</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+        <a target="_blank" rel="noopener noreferrer" href="https://icons8.com/icon/CtrV2SV33rD9/facebook-circled">Facebook</a> icon by <a target="_blank" rel="noopener noreferrer" href="https://icons8.com">Icons8</a>
       </p>
       <p>
-        <a target="_blank" href="https://icons8.com/icon/X8g2OZMx4ET5/linkedin">LinkedIn</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+        <a target="_blank" rel="noopener noreferrer" href="https://icons8.com/icon/X8g2OZMx4ET5/linkedin">LinkedIn</a> icon by <a target="_blank" rel="noopener noreferrer" href="https://icons8.com">Icons8</a>
       </p>
       <p>
-        <a target="_blank" href="https://icons8.com/icon/akG4VRhAoSii/github">GitHub</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+        <a target="_blank" rel="noopener noreferrer" href="https://icons8.com/icon/akG4VRhAoSii/github">GitHub</a> icon by <a target="_blank" rel="noopener noreferrer" href="https://icons8.com">Icons8</a>
       </p>
       <p>
         <a href="https://www.freepik.com/free-photo/still-life-books-versus-technology_36290035.htm">Image by freepik</a>
       </p>
-      </footer>
+    </div>
+  </footer>
   <script src="index.js"></script>
 </body>
 </html>
