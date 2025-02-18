@@ -1,0 +1,236 @@
+Let’s redesign your resume website with modern UI/UX principles and strategic animations. I’ll break this into sections for clarity, including specific design specs and implementation guidance.
+
+---
+
+### **1. Color Scheme**
+**Professional + Friendly Palette:**
+- **Primary**: `#2563EB` (Confident Blue)
+- **Secondary**: `#0EA5E9` (Friendly Cyan)
+- **Accent**: `#F59E0B` (Warm Amber)
+- **Neutral**: `#F3F4F6` (Light Gray BG), `#1F2937` (Dark Text)
+- **Gradient**: `linear-gradient(135deg, #2563EB 0%, #0EA5E9 100%)`
+
+---
+
+### **2. Typography**
+- **Primary Font**: [Inter](https://fonts.google.com/specimen/Inter) (Clean, modern, highly readable)
+  ```css
+  font-family: 'Inter', sans-serif;
+  ```
+- **Weights**:
+  - Regular (400) for body text
+  - Semi-bold (600) for headings
+  - Bold (700) for your name/CTAs
+
+---
+
+### **3. Layout Structure**
+#### **Hero Section**
+![Hero Section Wireframe](https://via.placeholder.com/800x500.png?text=Hero+Section+Wireframe)
+
+**Elements:**
+1. **Animated Intro Text** (GSAP):
+   ```html
+   <h1 class="text-5xl font-bold text-primary opacity-0" id="heroTitle">
+     Hi, I'm <span class="text-accent">Alex Switzer</span>
+   </h1>
+   ```
+   GSAP Animation:
+   ```js
+   gsap.from("#heroTitle", {
+     duration: 1,
+     opacity: 0,
+     y: 50,
+     ease: "power4.out"
+   });
+   ```
+
+2. **Profile Image**:
+   - Use a friendly, professional headshot with soft drop-shadow
+   - Add subtle floating animation:
+     ```css
+     .floating {
+       animation: float 6s ease-in-out infinite;
+     }
+     @keyframes float {
+       0%, 100% { transform: translateY(0px); }
+       50% { transform: translateY(-20px); }
+     }
+     ```
+
+3. **Social Links**:
+   - Animated hover effects using GSAP:
+   ```js
+   gsap.to(".social-icon", {
+     duration: 0.3,
+     scale: 1.2,
+     repeat: 1,
+     yoyo: true,
+     paused: true
+   });
+   ```
+
+---
+
+### **4. Skills Section**
+**Modern Card Design**:
+```html
+<div class="skill-card group">
+  <div class="skill-icon bg-gradient-to-br from-primary to-secondary"></div>
+  <h3>Frontend Development</h3>
+  <p>React, Vue, Tailwind CSS</p>
+</div>
+```
+
+**Styling**:
+- Hover effect with GSAP scale animation
+- Gradient borders using `border-image`
+- CSS `clip-path` for modern shapes
+
+---
+
+### **5. Project Showcase**
+**Interactive Cards**:
+- Parallax effect on mouse movement
+- GIF previews on hover
+- Stack icons with subtle bounce animation
+- Custom hover states:
+  ```css
+  .project-card:hover .project-image {
+    transform: scale(1.05);
+    filter: drop-shadow(0 10px 8px rgba(0,0,0,0.04));
+  }
+  ```
+
+---
+
+### **6. Trust Signals**
+1. **Client Logos Marquee** (Animated with GSAP)
+2. **Testimonial Carousel** with fade transitions
+3. **Certification Badges** with hover zoom
+
+---
+
+### **7. Contact Section**
+**Animated Form**:
+```js
+gsap.from(".contact-input", {
+  duration: 0.8,
+  opacity: 0,
+  x: -50,
+  stagger: 0.1,
+  ease: "back.out(1.7)"
+});
+```
+
+---
+
+### **8. Loading Animation**
+Create initial loader with GSAP:
+```js
+const tl = gsap.timeline();
+tl.from(".loader-line", {
+  scaleX: 0,
+  duration: 2,
+  ease: "power4.out"
+});
+```
+
+---
+
+### **9. Micro-Interactions**
+- Button hover: `scale(1.05)` + shadow
+- Link underline animation on hover
+- Scroll-triggered animations for timeline elements
+- Page transition animations
+
+---
+
+### **10. Accessibility**
+- Ensure AA contrast ratios
+- Add keyboard navigation support
+- Use `prefers-reduced-motion` media query
+- Semantic HTML structure
+
+---
+
+### **Implementation Steps**
+
+1. **Setup**:
+   ```bash
+   npx create-next-app@latest --typescript
+   npm install gsap @heroicons/react
+   ```
+
+2. **Tailwind Config**:
+   ```js
+   // tailwind.config.js
+   module.exports = {
+     content: ["./src/**/*.{js,ts,jsx,tsx}"],
+     theme: {
+       extend: {
+         colors: {
+           primary: '#2563EB',
+           secondary: '#0EA5E9',
+           accent: '#F59E0B',
+           dark: '#1F2937',
+         },
+         fontFamily: {
+           sans: ['Inter', 'sans-serif']
+         }
+       },
+     },
+     plugins: [],
+   }
+   ```
+
+3. **Sample Component** (Animated Hero):
+   ```tsx
+   import { useGSAP } from "@gsap/react";
+   import gsap from "gsap";
+
+   export default function Hero() {
+     useGSAP(() => {
+       gsap.from(".hero-content", {
+         duration: 1.5,
+         opacity: 0,
+         y: 50,
+         stagger: 0.2,
+         ease: "elastic.out(1, 0.75)"
+       });
+     });
+
+     return (
+       <section className="min-h-screen bg-gradient-to-b from-[#F3F4F6] to-white">
+         <div className="container mx-auto px-4 py-20">
+           <div className="hero-content opacity-0">
+             <h1 className="text-6xl font-bold text-dark mb-4">
+               Full-Stack Developer
+             </h1>
+             {/* Add other elements */}
+           </div>
+         </div>
+       </section>
+     );
+   }
+   ```
+
+---
+
+### **Performance Tips**
+1. Use `next/image` for optimized images
+2. Lazy load non-critical animations
+3. Implement Intersection Observer for scroll animations
+4. Compress GIFs with [Compressor.io](https://compressor.io/)
+5. Use CSS `will-change` property judiciously
+
+---
+
+### **Final Touches**
+1. Add dark mode toggle
+2. Create printable version (PDF generation)
+3. Implement analytics tracking
+4. Add 404 custom page with animation
+5. Create loading skeleton screens
+
+Would you like me to focus on any specific section or provide code examples for particular components?
