@@ -18,11 +18,12 @@
   <!-- Scripts with defer for non-critical JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" defer></script>
   <script src="index.js" defer></script>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="text-gray-800 z-10 static montserrat-300">
+<body class="text-gray-800 z-10 static montserrat-300 bg-[#852966]">
   <!-- Header Menu -->
   <div class="fixed top-0 left-1/2 transform -translate-x-1/2 mt-5 w-auto z-50 px-10 py-3 gap-2 bg-gradient-to-r from-[#2563EB] to-[#0ea5e9] rounded-full hover:scale-105" id="headerMenu">
     <div class="flex gap-4 montserrat-500 z-50">
@@ -114,47 +115,91 @@
   <section id="skills" class="bg-gradient-to-b from-[#852966] via-[#00426e] to-[#852966] py-16 static z-0">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-8 text-white underline Inter-500">Skills</h2>
-      <div class="flex flex-col md:flex-row justify-center gap-6 mb-4">
-        <div class="flex flex-col w-2/5 justify-center gap-4 mx-auto md:mx-0">
-          <button class="text-xl font-bold text-center underline text-white inter-500 hover:scale-105" id="frontEndButton">Front End</button>
-          <div class="hidden flex flex-col justify-center gap-4" id="frontEndSkills">
-            <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
-              <p class="text-lg font-semibold">HTML</p>
+      <div class="flex justify-around w-full gap-6 mb-4 ">
+        <div class="flex flex-col flex-1 gap-4 ">
+          <h2 class="text-xl my-auto font-bold text-center underline text-white inter-500" id="frontEndHeading">Front End : </h2>
+          <div class="grid-cols-3 grid gap-4" id="frontEndSkills">
+            <div class="mx-auto my-auto">
+              <div class="p-1 bg-white rounded-full shadow-md z-10 my-3 flex items-center justify-center" style="width: 100px; height: 100px;">
+                <img src="/assets/image/html.png" alt="HTML Logo" class="h-16 object-cover" loading="lazy">
+              </div>
+              <p class="text-center text-white font-semibold absolute" style="width: 100px;">HTML</p>
             </div>
-            <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
-              <p class="text-lg font-semibold">CSS</p>
+            <div class="mx-auto my-auto">
+              <div class="p-1 bg-white rounded-full shadow-md z-10 my-3 flex items-center justify-center" style="width: 100px; height: 100px;">
+                <img src="/assets/image/css.png" alt="CSS Logo" class="h-16 object-fit" loading="lazy">
+              </div>
+              <p class="text-center text-white font-semibold absolute" style="width: 100px;">CSS</p>
             </div>
-            <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
-              <p class="text-lg font-semibold">JavaScript</p>
+            <div class="mx-auto my-auto">
+              <div class="p-1 bg-white rounded-full shadow-md z-10 my-3 flex items-center justify-center" style="width: 100px; height: 100px;">
+                <img src="/assets/image/javascript.png" alt="JavaScript Logo" class="h-16 object-fit" loading="lazy">
+              </div>
+              <p class="text-center text-white font-semibold absolute" style="width: 100px;">Javascript</p>
             </div>
-            <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
-              <p class="text-lg font-semibold">Typescript</p>
+            <div class="mx-auto my-auto">
+              <div class="p-1 bg-white rounded-full shadow-md z-10 my-3 flex items-center justify-center" style="width: 100px; height: 100px;">
+                <img src="/assets/image/typescript.png" alt="TypeScript Logo" class="h-16 object-fit" loading="lazy">
+              </div>
+              <p class="text-center text-white font-semibold absolute" style="width: 100px;">Typescript</p>
             </div>
-            <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
-              <p class="text-lg font-semibold">React Js</p>
+            <div class="mx-auto my-auto">
+              <div class="p-1 bg-white rounded-full shadow-md z-10 my-3 flex items-center justify-center" style="width: 100px; height: 100px;">
+                <img src="/assets/image/react.png" alt="React Logo" class="h-16 object-fit" loading="lazy">
+              </div>
+              <p class="text-center text-white font-semibold absolute" style="width: 100px;">React</p>
             </div>
-            <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
-              <p class="text-lg font-semibold">Bootstrap Framework</p>
+            <div class="mx-auto my-auto">
+              <div class="p-1 bg-white rounded-full shadow-md z-10 my-3 flex items-center justify-center" style="width: 100px; height: 100px;">
+                <img src="/assets/image/bootstrap.png" alt="Bootstrap Logo" class="h-16 object-fit" loading="lazy">
+              </div>
+              <p class="text-center text-white font-semibold absolute" style="width: 100px;">Bootstrap Framework</p>
             </div>
-            <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
-              <p class="text-lg font-semibold">Tailwind CSS Framework</p>
+            <div class="mx-auto my-auto">
+              <div class="p-1 bg-white rounded-full shadow-md z-10 my-3 flex items-center justify-center" style="width: 100px; height: 100px;">
+                <img src="/assets/image/tailwind.png" alt="Tailwind CSS Logo" class="h-16 object-fit" loading="lazy">
+              </div>
+              <p class="text-center text-white font-semibold absolute" style="width: 100px;">Tailwind CSS</p>
             </div>
           </div>
         </div>
-        <div class="flex flex-col w-2/5 gap-6 mx-auto md:mx-0">
-          <button class="text-xl font-bold text-center text-white inter-500 underline hover:scale-105" id="BackEndButton">Back End</button>
-          <div class="flex flex-col justify-center gap-4 hidden" id="BackEndSkills">
-            <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
-              <p class="text-lg font-semibold">PostgreSQL</p>
+        <div class="flex flex-col flex-1 gap-4 ">
+          <h2 class="text-xl mx-auto font-bold text-center underline text-white inter-500" id="backEndButton">Back End : </h2>
+          <div class="grid-cols-3 grid gap-4" id="BackEndSkill">
+            <div class="mx-auto my-auto">
+              <div class="p-1 bg-white rounded-full shadow-md z-10 my-3 flex items-center justify-center" style="width: 100px; height: 100px;">
+                <img src="/assets/image/postgresql.png" alt="PostgreSQL Logo" class="h-16 object-fit" loading="lazy">
+              </div>
+              <p class="text-center text-white font-semibold absolute" style="width: 100px;">PostgreSQL</p>
             </div>
-            <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
-              <p class="text-lg font-semibold">Node Js</p>
+            <div class="mx-auto my-auto">
+              <div class="p-1 bg-white rounded-full shadow-md z-10 my-3 flex items-center justify-center" style="width: 100px; height: 100px;">
+                <img src="/assets/image/nodejs.png" alt="NodeJs Logo" class="h-16 object-fit" loading="lazy">
+              </div>
+              <p class="text-center text-white font-semibold absolute" style="width: 100px;">Node JS</p>
             </div>
-            <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
-              <p class="text-lg font-semibold">Express Js</p>
+            <div class="mx-auto my-auto">
+              <div class="p-1 bg-white rounded-full shadow-md z-10 my-3 flex items-center justify-center" style="width: 100px; height: 100px;">
+                <img src="/assets/image/expressjs.png" alt="ExpressJs Logo" class="h-16 object-cover" loading="lazy">
+              </div>
+              <p class="text-center text-white font-semibold absolute" style="width: 100px;">Express JS</p>
             </div>
-            <div class="p-6 bg-white rounded-md shadow-md text-center transform transition z-10 my-3">
-              <p class="text-lg font-semibold">Embedded Js</p>
+          </div>
+        </div>
+        <div class="flex flex-col flex-1 gap-4 ">
+          <h2 class="text-xl mx-auto font-bold text-center underline text-white inter-500" id="SourceControlHeading">Source Control : </h2>
+          <div class="grid-cols-3 grid gap-4" id="SourceControlSkill">
+            <div class="mx-auto my-auto">
+              <div class="p-1 bg-white rounded-full shadow-md z-10 my-3 flex items-center justify-center" style="width: 100px; height: 100px;">
+                <img src="/assets/image/git.png" alt="Git Logo" class="h-16 object-fit" loading="lazy">
+              </div>
+              <p class="text-center text-white font-semibold absolute" style="width: 100px;">Git</p>
+            </div>
+            <div class="mx-auto my-auto">
+              <div class="p-1 bg-white rounded-full shadow-md z-10 my-3 flex items-center justify-center" style="width: 100px; height: 100px;">
+                <img src="/assets/image/github.png" alt="GitHub Logo" class="h-16 object-fit" loading="lazy">
+              </div>
+              <p class="text-center text-white font-semibold absolute" style="width: 100px;">Git Hub</p>
             </div>
           </div>
         </div>
@@ -225,7 +270,7 @@
     </div>
   </section>
 
-  <section class="fixed bottom-0 right-0" id="contactIcon">
+  <section class="fixed bottom-0 right-0" id="contactMe">
     <div class="mb-12 mx-12">
       <div class="flex flex-col opacity-80 text-center justify-center gap-2 py-4 hidden bg-white rounded-full" id="contactMeChoice">
         <div class="flex justify-center">
@@ -261,7 +306,7 @@
   </section>
   <hr/>
   <!-- Contact Section -->
-  <footer id="contact" class="bg-gray-800 text-white py-16 bg-gradient-to-b from-[#852966] to-[#00426e]">
+  <footer id="footer" class="bg-gray-800 text-white py-16 bg-gradient-to-b from-[#852966] to-[#00426e]">
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold mb-8">Contact Me</h2>
       <p>Reach out to collaborate or hire me!</p>

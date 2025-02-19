@@ -36,7 +36,7 @@ $(document).ready(function() {
     })
     .to("#subShortIntro", {
         text: "I can use : ",
-        duration: 2,
+        duration: 1,
         ease: "power1.inOut"
     })
     .to("#tectMentionDiv", {
@@ -82,7 +82,7 @@ $(document).ready(function() {
         });
     }
 
-    cycleTechStack(); // Start cycling tech stack
+    setTimeout(cycleTechStack(), 2000); // Start cycling tech stack
 
     // Other interactions
     $("#contactMe").click(function () { 
@@ -118,4 +118,93 @@ $(document).ready(function() {
         e.preventDefault();
         window.open("https://sakuraspabwi.com", "POS");
     });
+
+    // Register GSAP ScrollTrigger Plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animate the Skills Section on Scroll
+    gsap.from("#frontEndSkills", {
+        scrollTrigger: {
+            trigger: "#frontEndSkills",
+            start: "top 80%", // Starts when 80% of the viewport height is reached
+            toggleActions: "play none none reverse", // Play animation when entering, reverse when leaving
+        },
+        opacity: 0,
+        y: 50, // Moves up from 50px
+        duration: 1.5,
+        ease: "power2.out"
+    });
+
+    gsap.from("#BackEndSkill", {
+        scrollTrigger: {
+            trigger: "#BackEndSkill",
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+        },
+        opacity: 0,
+        y: 50,
+        duration: 1.5,
+        ease: "power2.out"
+    });
+
+    gsap.from("#SourceControlSkill", {
+        scrollTrigger: {
+            trigger: "#SourceControlSkill",
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+        },
+        opacity: 0,
+        y: 50,
+        duration: 1.5,
+        ease: "power2.out"
+    });
+
+    gsap.from("#about", {
+        scrollTrigger: {
+            trigger: "#about",
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+        },
+        opacity: 0,
+        y: 150,
+        duration: 1.5,
+        ease: "power2.out"
+    });
+
+    gsap.from("#skills", {
+        scrollTrigger: {
+            trigger: "#skills",
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+        },
+        opacity: 0,
+        y: 150,
+        duration: 1.5,
+        ease: "power2.out"
+    });
+
+    gsap.from("#projects", {
+        scrollTrigger: {
+            trigger: "#projects",
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+        },
+        opacity: 0,
+        y: 150,
+        duration: 1.5,
+        ease: "power2.out"
+    });
+
+    gsap.from("#footer", {
+        scrollTrigger: {
+            trigger: "#footer",
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+        },
+        opacity: 0,
+        y: 150,
+        duration: 1.5,
+        ease: "power2.out"
+    });
+
 });
