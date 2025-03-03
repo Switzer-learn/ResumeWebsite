@@ -7,12 +7,22 @@ $(document).ready(function() {
     }
     $('#thisYear').attr('value', new Date().getFullYear());
 
-    // Fade-in animation for introduction
+    // Fade-in animation for introduction with a stagger effect
     gsap.from("#introduction", {
-        duration: 2,
+        duration: 2.5,
         opacity: 0,
-        y: 250,
-        ease: "power4.out"
+        y: 100,
+        ease: "expo.out",
+        clearProps: "all"
+    });
+
+    // Add a subtle floating animation to the profile picture
+    gsap.to("#myPic", {
+        y: 15,
+        duration: 2,
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut"
     });
 
     // Register GSAP TextPlugin
@@ -21,29 +31,55 @@ $(document).ready(function() {
     // Create a GSAP timeline for sequential animations
     var tl = gsap.timeline();
 
-    // Step 1: Animate the name first
+    // Enhanced text animations with better timing and effects
     tl.to("#myName", {
         text: "Hi, I'm Willy! Nice to meet you.",
-        duration: 3,
-        ease: "power1.inOut"
+        duration: 2,
+        ease: "power2.out",
+        opacity: 1
     })
+    .from("#myName", {
+        y: 20,
+        opacity: 0,
+        duration: 1,
+        ease: "power2.out"
+    }, "-=1")
 
-    // Step 2: Animate the short introduction and tech skills section
     .to("#shortIntro", {
         text: "I'm a Full-Stack Web Developer",
-        duration: 2,
-        ease: "power1.inOut"
+        duration: 1.5,
+        ease: "power2.out"
     })
+    .from("#shortIntro", {
+        y: 20,
+        opacity: 0,
+        duration: 1,
+        ease: "power2.out"
+    }, "-=1")
+
     .to("#subShortIntro", {
         text: "I can use : ",
-        duration: 1,
-        ease: "power1.inOut"
+        duration: 0.8,
+        ease: "power2.out"
     })
+    .from("#subShortIntro", {
+        y: 20,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out"
+    }, "-=0.8")
+
     .to("#tectMentionDiv", {
-        opacity: 1, // Make the div fully visible and persist
+        opacity: 1,
         duration: 1,
-        ease: "power1.inOut"
-    });
+        ease: "power2.out"
+    })
+    .from("#tectMentionDiv", {
+        y: 20,
+        scale: 0.95,
+        duration: 1,
+        ease: "back.out(1.7)"
+    }, "-=1");
 
     // Tech Stack cycling animation
     const techStack = ["JAVASCRIPT", "REACT", "TYPESCRIPT", "SUPABASE", "TAILWIND CSS", "BOOTSTRAP FRAMEWORK", "NODE JS", "EXPRESS JS"];
@@ -123,88 +159,54 @@ $(document).ready(function() {
     gsap.registerPlugin(ScrollTrigger);
 
     // Animate the Skills Section on Scroll
-    gsap.from("#frontEndSkills", {
-        scrollTrigger: {
-            trigger: "#frontEndSkills",
-            start: "top 80%", // Starts when 80% of the viewport height is reached
-            toggleActions: "play none none reverse", // Play animation when entering, reverse when leaving
-        },
-        opacity: 0,
-        y: 50, // Moves up from 50px
-        duration: 1.5,
-        ease: "power2.out"
+    // Enhanced scroll animations with stagger effects
+    const sections = ["#about", "#skills", "#projects", "#footer"];
+    sections.forEach(section => {
+        gsap.from(section, {
+            scrollTrigger: {
+                trigger: section,
+                start: "top 80%",
+                end: "top 20%",
+                toggleActions: "play none none reverse",
+                scrub: 1
+            },
+            opacity: 0,
+            y: 100,
+            scale: 0.95,
+            duration: 1.5,
+            ease: "power2.out"
+        });
     });
 
-    gsap.from("#BackEndSkill", {
-        scrollTrigger: {
-            trigger: "#BackEndSkill",
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-        },
-        opacity: 0,
-        y: 50,
-        duration: 1.5,
-        ease: "power2.out"
+    // Staggered animation for skill icons
+    const skillSections = ["#frontEndSkills", "#BackEndSkill", "#SourceControlSkill"];
+    skillSections.forEach(section => {
+        gsap.from(`${section} .relative.group`, {
+            scrollTrigger: {
+                trigger: section,
+                start: "top 80%",
+                end: "top 20%",
+                toggleActions: "play none none reverse"
+            },
+            opacity: 0,
+            y: 50,
+            scale: 0.8,
+            duration: 1,
+            stagger: 0.2,
+            ease: "back.out(1.7)"
+        });
     });
 
-    gsap.from("#SourceControlSkill", {
+    // Parallax effect for background gradients
+    gsap.to(".absolute.inset-0", {
         scrollTrigger: {
-            trigger: "#SourceControlSkill",
-            start: "top 80%",
-            toggleActions: "play none none reverse",
+            trigger: "body",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 1
         },
-        opacity: 0,
-        y: 50,
-        duration: 1.5,
-        ease: "power2.out"
-    });
-
-    gsap.from("#about", {
-        scrollTrigger: {
-            trigger: "#about",
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-        },
-        opacity: 0,
-        y: 150,
-        duration: 1.5,
-        ease: "power2.out"
-    });
-
-    gsap.from("#skills", {
-        scrollTrigger: {
-            trigger: "#skills",
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-        },
-        opacity: 0,
-        y: 150,
-        duration: 1.5,
-        ease: "power2.out"
-    });
-
-    gsap.from("#projects", {
-        scrollTrigger: {
-            trigger: "#projects",
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-        },
-        opacity: 0,
-        y: 150,
-        duration: 1.5,
-        ease: "power2.out"
-    });
-
-    gsap.from("#footer", {
-        scrollTrigger: {
-            trigger: "#footer",
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-        },
-        opacity: 0,
-        y: 150,
-        duration: 1.5,
-        ease: "power2.out"
+        backgroundPosition: "50% 100%",
+        ease: "none"
     });
 
 });
